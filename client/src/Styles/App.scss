@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
+$fontFamily: 'Libre Baskerville', serif;
+
+$purple: #65528e;
+$dark: #524948;
+$green: #657656;
+$white: #e0ddcf;
+$red: #ee6352;
+
+body * {
+    font-family: $fontFamily;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    margin: 0;
+    background-color: $white;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+
+    .MuiTextField-root {
+        label, input {
+            font-family: $fontFamily;
+            color: $purple;
+        }
+        fieldset {
+            border-color: $purple;
+        }
+    }
+
+    .MuiButton-root {
+        border-color: $purple;
+        font-family: $fontFamily;
+        color: $white;
+    }
+}
+
+.role-picker, .host-homepage, .player-homepage {
+    flex-direction: column;
+    padding: 20px 50px;
+    border: 2px solid $dark;
+    border-radius: 5px;
+    margin-top: 20px;
+
+    h1 {
+        font-size: 45px;
+        margin-top: 0px;
+    }
+
+    .role-button-container {
+        display: inline-flex;
+        gap: 25px;
+
+        .MuiButton-root {
+            background-color: $purple;
+        }
+    }
+}
+
+.player-setup {
+    color: $dark;
+    flex-direction: column;
+    gap: 20px;
+
+    .player-icon-selection {
+        .icon-button.selected {
+            background-color: $purple;
+        }
+
+        .player-token {
+            color: $purple;
+        }
+    }
+
+    .MuiButton-root.player-setup-submit {
+        background-color: $purple;
+    }
+
+}
