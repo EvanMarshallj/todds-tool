@@ -42,6 +42,7 @@ body {
 }
 
 .role-picker, .host-homepage, .player-homepage {
+    color: $dark;
     flex-direction: column;
     padding: 20px 50px;
     border: 2px solid $dark;
@@ -81,5 +82,14 @@ body {
     .MuiButton-root.player-setup-submit {
         background-color: $purple;
     }
+}
 
+.grid {
+    flex-direction: column;
+
+    .grid-tile {
+        height: 20px;
+        width: 20px;
+        border: solid $dark 2px;
+    }
 }

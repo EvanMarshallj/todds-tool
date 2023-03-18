@@ -1,8 +1,7 @@
-import { ReactElement, useState } from 'react';
+import { useState } from 'react';
 import { useEffect } from 'react';
 import { Socket } from 'socket.io-client';
-// @ts-ignore
-import Canvas from '../Canvas.tsx';
+import Grid from '../Grid/Grid.tsx';
 import PlayerSetup from './PlayerSetup.tsx';
 import { Player } from '../../types.js';
 
@@ -30,7 +29,7 @@ export default function PlayerHomepage(props: PlayerHomepageProps) {
                 <div>
                     Your name: {playerInfo.name}
                     Your token: {playerInfo.token}
-                    <Canvas className='player-canvas' height={401} width={841}/>
+                    <Grid className='player-grid' height={401} width={841}/>
                 </div>
             }
         </div>

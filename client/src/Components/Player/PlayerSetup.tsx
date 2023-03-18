@@ -4,7 +4,7 @@ import ShieldMoonIcon from '@mui/icons-material/ShieldMoon';
 import AcUnitIcon from '@mui/icons-material/AcUnit';
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh.js';
 import CallMadeIcon from '@mui/icons-material/CallMade';
-
+//@ts-ignore
 import PlayerToken from "./PlayerToken.tsx";
 import { Player } from '../../types.js';
 
@@ -31,9 +31,10 @@ export default function PlayerSetup(props: PlayerSetupProps) {
                 })}
             </ButtonGroup>
             {valid && 
-            <Button className='player-setup-submit' variant="contained" endIcon={<CallMadeIcon />} onClick={() => props.submit({id: 1234, name:name, token: <ShieldMoonIcon/> })}>
-                To Battle!
-            </Button>}
+                <Button className='player-setup-submit' variant="contained" endIcon={<CallMadeIcon />} onClick={() => props.submit({id: 1234, name:name, token: tokens.find(t => t.id === tokenId)!.icon })}>
+                    To Battle!
+                </Button>
+            }
 
         </div>
     );

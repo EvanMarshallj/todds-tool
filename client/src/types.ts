@@ -8,5 +8,5 @@ export enum Role {
 export interface Player {
     id: number,
     name: string,
-    token: ReactElement,
+    token?: ReactElement,
 }
