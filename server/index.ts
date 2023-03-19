@@ -36,6 +36,10 @@ io.on("connection", (socket) => {
         socket.to('2').emit('host_joined', name, id);
     });
 
+    socket.on('token_moved', (row: number, col: number, tokenId: number) => {
+        socket.to('2').emit('token_moved', row, col, tokenId);
+    });
+
 });
 
 server.listen(3001, () => {

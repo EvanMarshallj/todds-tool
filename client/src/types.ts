@@ -1,5 +1,3 @@
-import { ReactElement } from "react";
-
 export enum Role {
     Host,
     Player
@@ -8,5 +6,10 @@ export enum Role {
 export interface Player {
     id: number,
     name: string,
-    token?: ReactElement,
+    tokenId?: number,
+}
+
+export interface GridCoord {
+    row: number,
+    col: number
 }

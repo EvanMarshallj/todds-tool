@@ -3,7 +3,8 @@ import { useEffect } from 'react';
 import { Socket } from 'socket.io-client';
 import Grid from '../Grid/Grid.tsx';
 import PlayerSetup from './PlayerSetup.tsx';
-import { Player } from '../../types.js';
+import { GridCoord, Player } from '../../types.js';
+import { Tokens } from '../../constants.tsx';
 
 export interface PlayerHomepageProps {
     socket: Socket,
@@ -18,18 +19,19 @@ export default function PlayerHomepage(props: PlayerHomepageProps) {
         props.socket.emit('player_joined', player.name);
     }
 
-    useEffect(() => {
-        
-    }, [])
+    const moveToken = (coord: GridCoord) => {
+        props.socket.emit('token_moved', {row: 0, col: 0, tokenId: 0});
+    }
+
 
     return(
         <div className='player-homepage'>
             {!setupComplete && <PlayerSetup submit={submitPlayer} />}
             {setupComplete && 
-                <div>
+                <div onClick={() => moveToken({row: 0, col: 0})}>
                     Your name: {playerInfo.name}
-                    Your token: {playerInfo.token}
-                    <Grid className='player-grid' height={401} width={841}/>
+                    Your token: {Tokens[playerInfo.tokenId!]}
+                    <Grid height={2} width={2}/>
                 </div>
             }
         </div>

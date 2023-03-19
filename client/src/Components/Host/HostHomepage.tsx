@@ -9,7 +9,6 @@ export interface HostHomepageProps {
 
 export default function HostHomepage(props: HostHomepageProps){
 
-
     useEffect(() => {
         props.socket.emit('host_joined', {name: 'Evan-Host', id: 2});
     }, [props.socket]);

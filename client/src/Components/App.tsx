@@ -23,6 +23,10 @@ export default function App() {
         socket.on('host_joined', (host: {name: string, id: number}) => { 
             console.log(`Host joined: ${host.name} (id: ${host.id})`);
         });
+
+        socket.on('token_moved', (row: number, col: number, tokenId: number) => {
+           console.log('token moved!'); 
+        });
     }, [playerList, socket]);
 
     return (
