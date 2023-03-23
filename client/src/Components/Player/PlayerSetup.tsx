@@ -17,7 +17,7 @@ export default function PlayerSetup(props: PlayerSetupProps) {
     return(
         <div className='player-setup'>
             <h1>Player Setup</h1>
-            <TextField label="Name" variant="outlined" value={name} onChange={(event) => setName(event.target.value)} />
+            <TextField autoComplete='off' label="Name" variant="outlined" value={name} onChange={(event) => setName(event.target.value)} />
             <ButtonGroup className='player-icon-selection' variant='outlined'>
                 {Tokens.map((token, key) => {
                     return(
